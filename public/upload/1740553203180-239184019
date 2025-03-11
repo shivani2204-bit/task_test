@@ -1,0 +1,6 @@
+Mocha comes with tons of great features, the website shows a long list but here are the ones I like the most:
+
+simple async support, including promises.
+async test timeout support.
+before, after, before each, after each hooks (very useful to clean the environment where each test!).
+use any assertion library you want, Chai in our tutorial.
