@@ -10,6 +10,9 @@ import dotenv, { config } from "dotenv"
 dotenv.config()
 app.use(express.json())
 const port = process.env.PORT
+app.get('/',(req,res)=>{
+  res.send("hell from server")
+})
 app.use("/user",userRouter)
 app.use("/task",taskRouter)
 app.use("/admin",adminRouter)
