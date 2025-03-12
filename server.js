@@ -6,6 +6,7 @@ import taskRouter from "./src/routes/TaskRoute.js"
 import projectRouter from "./src/routes/ProjectRoute.js"
 import adminRouter from "./src/routes/AdminRoute.js"
 import dotenv, { config } from "dotenv"
+import cors from "cors"
 
 dotenv.config()
 app.use(cors());
