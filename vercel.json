@@ -1,20 +1,17 @@
 {
     "version": 2,
-    "builds": [
-      {
-        "src": "server.js",
-        "use": "@vercel/node"
+    "functions": {
+      "api/server.js": {
+        "maxDuration": 60
       }
-    ],
+    },
     "routes": [
       {
+        "handle": "filesystem"
+      },
+      {
         "src": "/(.*)",
-        "dest": "/server.js"
+        "dest": "api/server.js"
       }
-    ],
-    "functions": {
-      "server.js": {
-        "timeout": 30
-      }
-    }
+    ]
   }

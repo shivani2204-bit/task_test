@@ -2,12 +2,12 @@
   "name": "task-management-system",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "api/server.js",
   "type": "module",
   "scripts": {
     "test": "mocha test",
     "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node api/server.js"
   },
   "keywords": [],
   "author": "",
