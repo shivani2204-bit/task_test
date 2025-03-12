@@ -1,6 +1,6 @@
 import chai from "chai";
 import chaiHttp from "chai-http";
-import server from "../server.js";
+import app from "../api/server.js";
 import { expect } from "chai";
 import e from "express";
 chai.use(chaiHttp)
@@ -15,7 +15,7 @@ describe("Admin test case", () => {
         };
         this.timeout(5000);
         chai
-            .request(server)
+            .request(app)
             .post("/admin/AdminLogin")
             .send(admin)
             .end((err, res) => {
@@ -39,7 +39,7 @@ describe("Admin test case", () => {
             email: "muskanverma199765@gmail.com",
             password: "Muskan@123",
         };
-        chai.request(server).post("/admin/AdminLogin").send(admin)
+        chai.request(app).post("/admin/AdminLogin").send(admin)
             .end((err, res) => {
                 if (err) {
                     done(err)
@@ -62,7 +62,7 @@ describe("Admin test case", () => {
             email: "muskanverma99765@gmail.com",
             password: "Muskan@1234",
         };
-        chai.request(server).post("/admin/AdminLogin").send(admin)
+        chai.request(app).post("/admin/AdminLogin").send(admin)
             .end((err, res) => {
                 if (err) {
                     done(err)
@@ -86,7 +86,7 @@ describe("Admin test case", () => {
             email: "muskanverma99765@gmail.com",
             password: null,
         };
-        chai.request(server).post("/admin/AdminLogin").send(admin)
+        chai.request(app).post("/admin/AdminLogin").send(admin)
             .end((err, res) => {
                 if (err) {
                     done(err)
@@ -101,7 +101,7 @@ describe("Admin test case", () => {
 
 describe("User test case", () => {
     it("get all users", function (done) {
-        chai.request(server)
+        chai.request(app)
             .get("/user/getAllUser")
             .end((err, res) => {
                 if (err) {
@@ -126,7 +126,7 @@ describe("User test case", () => {
         };
         this.timeout(5000);
         chai
-            .request(server)
+            .request(app)
             .post("/user/userLogin")
             .send(user)
             .end((err, res) => {
@@ -150,7 +150,7 @@ describe("User test case", () => {
             password: "kashvi@123"
         };
         chai
-            .request(server)
+            .request(app)
             .post("/user/userLogin")
             .send(user)
             .end((err, res) => {
@@ -175,7 +175,7 @@ describe("User test case", () => {
             password: "kashvi@12399"
         }
         chai
-            .request(server)
+            .request(app)
             .post("/user/userLogin")
             .send(user)
             .end((err, res) => {
@@ -197,7 +197,7 @@ describe("User test case", () => {
             password: null
         }
         chai
-            .request(server)
+            .request(app)
             .post("/user/userLogin")
             .send(user)
             .end((err, res) => {
@@ -224,7 +224,7 @@ describe("User test case", () => {
         }
 
         chai
-            .request(server)
+            .request(app)
             .post("/user/userRegister")
             .send(user)
             .end((err, res) => {
@@ -257,7 +257,7 @@ describe("sub admin test case",()=>{
         //     "id":"67c04692645fcc70247ba535"
         //  }
          chai
-         .request(server)
+         .request(app)
          .delete("/admin/deleteSubadminById/67c04692645fcc70247ba535")
          .set("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im11c2thbnZlcm1hOTk3NjVAZ21haWwuY29tIiwiaWQiOiI2N2I0NzdjOWRlMjRhYzZiYjljZDQ3NGMiLCJhZG1pbnJvbGUiOiJzdXBlcmFkbWluIiwiaWF0IjoxNzQxMjQ0NjI3LCJleHAiOjE3NDEyNTE4Mjd9.mQJMUw4-sQxKfY7Ztil4EuVuiTdBJqrBMzX58Ln2M2k")
         //  .delete("/admin/deleteSubadminById")

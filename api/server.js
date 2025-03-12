@@ -16,10 +16,10 @@ const port = process.env.PORT || 9000;
 
 connectDb()
 
-// app.use("/user",userRouter)
-// app.use("/task",taskRouter)
-// app.use("/admin",adminRouter)
-// app.use("/project",projectRouter)
+app.use("/user",userRouter)
+app.use("/task",taskRouter)
+app.use("/admin",adminRouter)
+app.use("/project",projectRouter)
 
 app.get('/', (req, res) => {
   res.send("hello world of testing the deployment on vercel...");
@@ -30,8 +30,10 @@ app.get('/', (req, res) => {
 //     console.log("server is running on port 9000")
 // })
 
-// export default server;
 
 app.listen(port, () => {
   console.log(`app listen on ${port}`);
 });
+
+
+export default app;
