@@ -12,10 +12,10 @@ app.use(cors());
 app.use(express.json())
 const port = process.env.PORT || 3000;
 
-app.use("/user",userRouter)
-app.use("/task",taskRouter)
-app.use("/admin",adminRouter)
-app.use("/project",projectRouter)
+// app.use("/user",userRouter)
+// app.use("/task",taskRouter)
+// app.use("/admin",adminRouter)
+// app.use("/project",projectRouter)
 
 app.get('/', (req, res) => {
   res.send("hello world of testing the deployment on vercel...");
