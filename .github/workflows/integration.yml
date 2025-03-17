@@ -46,7 +46,7 @@ jobs:
         cache: 'npm'
 
     - name: Set up MongoDB URI
-        run: echo "MONGO_URL=${{ secrets.MONGO_URL }}" >> $GITHUB_ENV
+      run: echo "MONGO_URL=${{ secrets.MONGO_URL }}" >> $GITHUB_ENV
 
     - name: "Installing dependencies"
       run: npm ci
